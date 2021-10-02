@@ -1,0 +1,18 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "github>webhippie/renovate:docker",
+        "docker:pinDigests",
+        "default:automergeDigest"
+    ],
+    "packageRules": [{
+        "datasources": [
+            "docker"
+        ],
+        "updateTypes": [
+            "major",
+            "minor"
+        ],
+        "enabled": false
+    }]
+}

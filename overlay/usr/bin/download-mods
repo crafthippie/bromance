@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+mkdir -p /usr/share/minecraft/mods
+
+for MOD in $(cat /usr/share/minecraft/manifest.json | jq -c .files[]); do
+    PROJECT_ID=$(echo ${MOD} | jq -r .projectID)
+    FILE_ID=$(echo ${MOD} | jq -r .fileID)
+    MODINFO_URL="https://addons-ecs.forgesvc.net/api/v2/addon/${PROJECT_ID}/file/${FILE_ID}"
+
+    echo "> download url for ${PROJECT_ID}:${FILE_ID}"
+    DOWNLOAD_URL=$(curl -sSL ${MODINFO_URL} | jq -r .downloadUrl)
+
+    echo "> downloading $(basename ${DOWNLOAD_URL})"
+    curl -sSLo /usr/share/minecraft/mods/$(basename ${DOWNLOAD_URL}) ${DOWNLOAD_URL}
+done

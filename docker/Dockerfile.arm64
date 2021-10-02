@@ -1,0 +1,17 @@
+FROM webhippie/minecraft-forge:36.2-arm64
+
+VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
+EXPOSE 25565 25575 8123
+
+ENV MINECRAFT_LEVEL_TYPE biomesoplenty
+
+COPY ./overlay /
+COPY ./client/overrides /usr/share/minecraft
+COPY ./client/manifest.json /usr/share/minecraft
+COPY ./client/modlist.html /usr/share/minecraft
+
+RUN apt-get update && \
+  apt-get install -y jq && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* && \
+  download-mods
