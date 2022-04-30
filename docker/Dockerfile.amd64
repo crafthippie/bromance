@@ -1,4 +1,4 @@
-FROM webhippie/minecraft-forge:36.2-amd64@sha256:7636f262d14600bacefc84c30ac35d02a9f8c74e9e14caacf53c344c2665ffa9
+FROM webhippie/minecraft-forge:36.2-amd64@sha256:6512c3c580856cc4d07c8c041a0218e08900741fc0d4578b0275a682da1ef48a
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575 8123
