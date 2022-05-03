@@ -1,6 +1,6 @@
 # Bromance
 
-[![Docker Workflow](https://github.com/gopad/gopad-ui/actions/workflows/docker.yml/badge.svg)](https://github.com/gopad/gopad-ui/actions/workflows/docker.yml) [![Docker Size](https://img.shields.io/docker/image-size/crafthippie/bromance/latest)](https://hub.docker.com/r/crafthippie/bromance) [![Docker Pulls](https://img.shields.io/docker/pulls/crafthippie/bromance)](https://hub.docker.com/r/crafthippie/bromance) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/crafthippie/bromance)
+[![Docker Workflow](https://github.com/crafthippie/bromance/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/bromance/actions/workflows/docker.yml) [![Docker Size](https://img.shields.io/docker/image-size/crafthippie/bromance/latest)](https://hub.docker.com/r/crafthippie/bromance) [![Docker Pulls](https://img.shields.io/docker/pulls/crafthippie/bromance)](https://hub.docker.com/r/crafthippie/bromance) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/crafthippie/bromance)
 
 This repository provides the whole configuration for the `Bromance` Minecraft
 mod pack. It's used to automatically build and publish the required files for
