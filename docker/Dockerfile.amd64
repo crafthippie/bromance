@@ -5,13 +5,14 @@ EXPOSE 25565 25575 8123
 
 ENV MINECRAFT_LEVEL_TYPE biomesoplenty
 
+RUN apt-get update && \
+  apt-get install -y jq && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
 COPY ./overlay /
 COPY ./client/overrides /usr/share/minecraft
 COPY ./client/manifest.json /usr/share/minecraft
 COPY ./client/modlist.html /usr/share/minecraft
 
-RUN apt-get update && \
-  apt-get install -y jq && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/* && \
-  download-mods
+RUN download-mods

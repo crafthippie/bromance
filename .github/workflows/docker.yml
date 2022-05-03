@@ -1,30 +1,55 @@
 ---
 name: docker
 
-on:
+"on":
   push:
     branches:
       - master
     tags:
-      - 'v*'
-  pull_request:
-    branches:
-      - master
+      - v*
 
 jobs:
-  publish:
+  docker:
     runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        include:
+          - platform: linux/amd64
+            arch: amd64
+          - platform: linux/arm64
+            arch: arm64
 
     steps:
       - name: Checkout source
         id: source
         uses: actions/checkout@v3
 
-      - name: Setup QEMU
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          images: |
+            crafthippie/bromance
+            quay.io/crafthippie/bromance
+          labels: |
+            org.opencontainers.image.vendor=Crafthippie
+            maintainer=Thomas Boerger <thomas@webhippie.de>
+          tags: |
+            type=ref,event=pr
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+          flavor: |
+            suffix=-${{ matrix.arch }}
+
+      - name: Setup qemu
         id: qemu
         uses: docker/setup-qemu-action@v1
 
-      - name: Setup Buildx
+      - name: Setup buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
 
@@ -45,140 +70,94 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
 
-      - name: Meta amd64
-        id: amd64
+      - name: Build image
+        id: publish
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: docker/Dockerfile.$${{ matrix.arch }}
+          platforms: ${{ matrix.platform }}
+          push: ${{ github.event_name != 'pull_request' }}
+          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+
+  manifest:
+    runs-on: ubuntu-20.04
+    needs: docker
+
+    steps:
+      - name: Checkout source
+        id: source
+        uses: actions/checkout@v3
+
+      - name: Hub tags
+        id: hubTags
         uses: docker/metadata-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          images: |
-            crafthippie/bromance
-            quay.io/crafthippie/bromance
-          labels: |
-            org.opencontainers.image.vendor=Webhippie
-            maintainer=Thomas Boerger <thomas@webhippie.de>
+          images: crafthippie/bromance
           tags: |
-            type=ref,event=pr
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
-          flavor: |
-            suffix=-amd64
-
-      - name: Build amd64
-        id: amd64
-        uses: docker/build-push-action@v2
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: ${{ matrix.version.folder }}/
-          file: ${{ matrix.version.folder }}/Dockerfile.amd64
-          platforms: linux/amd64
-          push: ${{ github.event_name != 'pull_request' }}
-          labels: ${{ steps.amd64.outputs.labels }}
-          tags: ${{ steps.amd64.outputs.tags }}
-
-      - name: Meta arm64
-        id: arm64
-        uses: docker/metadata-action@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          images: |
-            crafthippie/bromance
-            quay.io/crafthippie/bromance
-          labels: |
-            org.opencontainers.image.vendor=Webhippie
-            maintainer=Thomas Boerger <thomas@webhippie.de>
-          tags: |
-            type=ref,event=pr
-            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-          flavor: |
-            suffix=-arm64
-
-      - name: Build arm64
-        id: arm64
-        uses: docker/build-push-action@v2
-        if: matrix.version.arm64
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: ${{ matrix.version.folder }}/
-          file: ${{ matrix.version.folder }}/Dockerfile.arm64
-          platforms: linux/arm64
-          push: ${{ github.event_name != 'pull_request' }}
-          labels: ${{ steps.arm64.outputs.labels }}
-          tags: ${{ steps.arm64.outputs.tags }}
-
-      - name: Meta arm
-        id: arm
-        uses: docker/metadata-action@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          images: |
-            crafthippie/bromance
-            quay.io/crafthippie/bromance
-          labels: |
-            org.opencontainers.image.vendor=Webhippie
-            maintainer=Thomas Boerger <thomas@webhippie.de>
-          tags: |
-            type=ref,event=pr
-            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-          flavor: |
-            suffix=-arm
-
-      - name: Build arm
-        id: arm
-        uses: docker/build-push-action@v2
-        if: matrix.version.arm
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: ${{ matrix.version.folder }}/
-          file: ${{ matrix.version.folder }}/Dockerfile.arm
-          platforms: linux/arm/v7
-          push: ${{ github.event_name != 'pull_request' }}
-          labels: ${{ steps.arm.outputs.labels }}
-          tags: ${{ steps.arm.outputs.tags }}
 
       - name: Hub manifest
-        id: manifest1
+        id: hub
         uses: actionhippie/manifest@v1
-        if: github.event_name != 'pull_request'
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
-          template: crafthippie/bromance:${{ matrix.version.tag }}-ARCH
-          target: crafthippie/bromance:${{ matrix.version.tag }}
+          platforms: linux/amd64,linux/arm64
+          template: crafthippie/bromance:VERSION-ARCH
+          target: ${{ steps.hubTags.outputs.tags }}
           ignore_missing: true
 
+      - name: Quay tags
+        id: quayTags
+        uses: docker/metadata-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          images: quay.io/crafthippie/bromance
+          tags: |
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+
       - name: Quay manifest
-        id: manifest2
+        id: quay
         uses: actionhippie/manifest@v1
-        if: github.event_name != 'pull_request'
         with:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
-          template: quay.io/crafthippie/bromance:${{ matrix.version.tag }}-ARCH
-          target: quay.io/crafthippie/bromance:${{ matrix.version.tag }}
+          platforms: linux/amd64,linux/arm64
+          template: quay.io/crafthippie/bromance:VERSION-ARCH
+          target: ${{ steps.quayTags.outputs.tags }}
           ignore_missing: true
 
+  readme:
+    runs-on: ubuntu-20.04
+    needs: docker
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
       - name: Hub readme
+        id: hub
         uses: actionhippie/pushrm@v1
-        if: github.event_name != 'pull_request'
         with:
           provider: dockerhub
           target: crafthippie/bromance
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          description: Docker image for ubuntu
+          description: Bromance
           readme: README.md
 
       - name: Quay readme
+        id: quay
         uses: actionhippie/pushrm@v1
         with:
           provider: quay

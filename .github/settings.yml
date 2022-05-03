@@ -1,8 +1,9 @@
+---
 repository:
   name: bromance
   description: Minecraft mod pack Bromance
   homepage: https://crafthippie.github.io/bromance
-  topics: docker, image, container, minecraft, client, twitch
+  topics: docker, image, container, minecraft, server, client
 
   private: false
   has_issues: true
@@ -46,3 +47,20 @@ labels:
   - name: outdated
     color: cccccc
     description: This is out of scope and outdated
+
+branches:
+  - name: master
+    protection:
+      required_pull_request_reviews: null
+      required_status_checks:
+        strict: true
+        contexts:
+          - docker
+      enforce_admins: false
+      restrictions:
+        apps:
+          - renovate
+        users: []
+        teams: []
+
+...
