@@ -65,6 +65,6 @@ jobs:
         id: testing
         if: startsWith(github.ref, 'refs/heads/')
         run: |
-          aws s3 sync dist/ s3://dl.webhippie.de/minecraft/bromance
+          aws s3 sync dist/ s3://dl.webhippie.de/minecraft/bromance/testing/
 
 ...
