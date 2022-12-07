@@ -1,4 +1,4 @@
-FROM webhippie/minecraft-vanilla:1.16.5-amd64@sha256:8fe0879b50bac06dcf4798894564b0134a1b82f1db9d138cfb89d5b53e3f159c
+FROM webhippie/minecraft-vanilla:1.16.5-amd64@sha256:468c851c624607186145cab7e43dee2890bd84c472c026033e8faa0e09d46f7c
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575 8123
