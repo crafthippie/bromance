@@ -1,6 +1,6 @@
 # Bromance
 
-[![Docker Workflow](https://github.com/crafthippie/bromance/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/bromance/actions/workflows/docker.yml) [![Docker Size](https://img.shields.io/docker/image-size/crafthippie/bromance/latest)](https://hub.docker.com/r/crafthippie/bromance) [![Docker Pulls](https://img.shields.io/docker/pulls/crafthippie/bromance)](https://hub.docker.com/r/crafthippie/bromance) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/crafthippie/bromance)
+[![Docker Workflow](https://github.com/crafthippie/bromance/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/bromance/actions/workflows/docker.yml) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/crafthippie/bromance)
 
 This repository provides the whole configuration for the `Bromance` Minecraft
 mod pack. It's used to automatically build and publish the required files for
@@ -36,7 +36,7 @@ available files for the client at https://dl.webhippie.de/minecraft/bromance.
 -   [webhippie/minecraft-forge](https://github.com/dockhippie/minecraft-forge#available-environment-variables)
 -   [webhippie/minecraft-vanilla](https://github.com/dockhippie/minecraft-vanilla#available-environment-variables)
 -   [webhippie/adoptopenjdk](https://github.com/dockhippie/adoptopenjdk#available-environment-variables)
--   [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
+-   [webhippie/ubuntu](https://github.com/dockhippie/ubuntu#available-environment-variables)
 
 ## Contributing
 
