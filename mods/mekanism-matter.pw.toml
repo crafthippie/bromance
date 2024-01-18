@@ -1,0 +1,13 @@
+name = "Mekanism Matter"
+filename = "MekanismMatter-1.20.1-Beta-1.16.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e774bc7543f02c65f129b5a36413460610bd5583"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3345253
+project-id = 456171

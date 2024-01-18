@@ -1,0 +1,13 @@
+name = "Tinkers Reforged"
+filename = "Tinkers Reforged 1.16.5-0.0.6.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8c00195b8414508c04158416c57cd206eb08bc01"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3732104
+project-id = 376876

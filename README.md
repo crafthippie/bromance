@@ -12,7 +12,7 @@ be found on https://crafthippie.github.io/bromance.
 
 To see the available Docker image versions it's best to look at
 https://hub.docker.com/r/crafthippie/bromance/tags while you can see the
-available files for the client at https://dl.webhippie.de/minecraft/bromance.
+available files for the client at https://dl.webhippie.de/#minecraft/bromance/.
 
 ## Volumes
 
@@ -28,7 +28,7 @@ available files for the client at https://dl.webhippie.de/minecraft/bromance.
 ## Available environment variables
 
 ```console
-
+MINECRAFT_BACKUPS_DIR = ${MINECRAFT_DATA_DIR}/backups
 ```
 
 ## Inherited environment variables

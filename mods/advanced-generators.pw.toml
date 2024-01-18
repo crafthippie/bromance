@@ -1,0 +1,13 @@
+name = "Advanced Generators"
+filename = "advgenerators-0.10.1.11-mc1.16.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "43ebbe3a687caed649a27e350648ffb4ea929024"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3361262
+project-id = 223622

@@ -1,0 +1,13 @@
+name = "IAP [Industrial Foregoing]"
+filename = "Industrial Agriculture[Industrial Foregoing]-1.16.3-1.7.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d66cea98bc753a3e60e18c1ddc669c70c9ee27f0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3136119
+project-id = 365781

@@ -1,0 +1,13 @@
+name = "bromance"
+author = "Thomas Boerger"
+version = "46e9274"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "a8e024350127c13358e44c1feb5c5e9228b81cf6bdbc3fe2005997e389125b8f"
+
+[versions]
+forge = "36.2.34"
+minecraft = "1.16.5"

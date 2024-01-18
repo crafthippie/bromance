@@ -1,0 +1,13 @@
+name = "Iron barrel mod"
+filename = "Iron barrel 1.16.x v2.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0ee1623ab1d60cdab7647f6620dedd6924c4eda3"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3706611
+project-id = 521212

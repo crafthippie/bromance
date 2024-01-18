@@ -1,0 +1,13 @@
+name = "EnderChests"
+filename = "enderchests-1.16-1.7.13.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "19d30aa720af88a3a12d841aa3420864e411e59a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3765396
+project-id = 363535

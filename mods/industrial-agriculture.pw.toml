@@ -1,0 +1,13 @@
+name = "Industrial Agriculture"
+filename = "Industrial Agriculture[Core]-1.16.5-1.8.16.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f64a59339036649669c285082e5f7c3d9803ebf7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3680636
+project-id = 356483

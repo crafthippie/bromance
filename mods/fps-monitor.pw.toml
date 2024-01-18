@@ -1,0 +1,13 @@
+name = "FPS Monitor"
+filename = "FPS-Monitor-1.16.5-1.2.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cc56137de4ec5bec1b3d9746ac97f59792ed173a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3751718
+project-id = 548447

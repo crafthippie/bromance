@@ -1,0 +1,13 @@
+name = "Blocky Stone Doors"
+filename = "blockydoors-1.16.5-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f8f232897c464e3e58535f350e1fecced2625829"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3227036
+project-id = 453072
