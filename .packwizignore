@@ -5,13 +5,24 @@ overlay/
 dist/
 
 *.jar
+resourcepacks/*.zip
 
 packwiz.json
 Makefile
 README.md
+CHANGELOG.md
 LICENSE
+
+flake.nix
+flake.lock
+
+.pre-commit-config.yaml
 
 .dockerignore
 .envrc
-.github
+.gitignore
 .releaserc
+
+.devenv
+.direnv
+.github
