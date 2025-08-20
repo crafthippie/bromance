@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/crafthippie/bromance/compare/v2.0.0...v3.0.0) (2025-08-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* restructure build process
+
+### Features
+
+* restructure build process ([fc8ca97](https://github.com/crafthippie/bromance/commit/fc8ca97ad3744fe88e2e49e527141ab82bc03a27))
+
 ## [2.0.0](https://github.com/crafthippie/bromance/compare/v1.0.0...v2.0.0) (2024-07-29)
 
 
