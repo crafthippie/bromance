@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/crafthippie/bromance/compare/v3.0.0...v3.0.1) (2025-08-20)
+
+
+### Bugfixes
+
+* resolve client deployment ([cefb404](https://github.com/crafthippie/bromance/commit/cefb404127d487498e1d3f78527fa45cf737e17c))
+
 ## [3.0.0](https://github.com/crafthippie/bromance/compare/v2.0.0...v3.0.0) (2025-08-20)
 
 
