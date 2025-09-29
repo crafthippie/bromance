@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/crafthippie/bromance/compare/v3.0.1...v3.0.2) (2025-09-29)
+
+
+### Bugfixes
+
+* **deps:** pin dependencies ([#81](https://github.com/crafthippie/bromance/issues/81)) ([90a2719](https://github.com/crafthippie/bromance/commit/90a27191603cc49a9be863b301592194a0408a5f))
+
 ## [3.0.1](https://github.com/crafthippie/bromance/compare/v3.0.0...v3.0.1) (2025-08-20)
 
 
