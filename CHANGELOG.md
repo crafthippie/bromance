@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.1.0](https://github.com/crafthippie/bromance/compare/v3.0.5...v3.1.0) (2026-08-03)
+
+### Features
+
+* restructure repo and build processes ([4c21655](https://github.com/crafthippie/bromance/commit/4c21655e4dcf5a74e008a18c5d106ee2d9af8adb))
+
+### Bugfixes
+
+* make does not exist anymore ([ff9bcb6](https://github.com/crafthippie/bromance/commit/ff9bcb634ed8af499696e80a046f5e374a01b7b5))
+* resolve build script and ignore dockerfile ([661d586](https://github.com/crafthippie/bromance/commit/661d5864984b875559478f4fa6f7ddef11a343aa))
+
+### Dependencies
+
+* **minor:** update dependency task to v3.52.0 ([#118](https://github.com/crafthippie/bromance/issues/118)) ([546e618](https://github.com/crafthippie/bromance/commit/546e6189aaa607833b9c6ae3881ef97371da7fb7))
+
 ## [3.0.5](https://github.com/crafthippie/bromance/compare/v3.0.4...v3.0.5) (2025-10-20)
 
 ## [3.0.4](https://github.com/crafthippie/bromance/compare/v3.0.3...v3.0.4) (2025-10-13)
