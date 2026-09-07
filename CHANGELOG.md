@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.3.2](https://github.com/crafthippie/bromance/compare/v3.3.1...v3.3.2) (2026-09-07)
+
+### Dependencies
+
+* **patch:** pin quay.io/crafthippie/bromance docker tag to 45d0ce8 ([#127](https://github.com/crafthippie/bromance/issues/127)) ([c3b94a4](https://github.com/crafthippie/bromance/commit/c3b94a489b3a142b96e826cc37a6f87b81b3fa48))
+* **patch:** update module go:github.com/packwiz/packwiz to v0.0.0-20260902165313-9066bf845f7e ([#128](https://github.com/crafthippie/bromance/issues/128)) ([64aad52](https://github.com/crafthippie/bromance/commit/64aad52f9b470f3b44793cbc1b0ee52530d16f5d))
+* **patch:** update module go:github.com/packwiz/packwiz to v0.0.0-20260906154125-ef87d964f8cb ([#129](https://github.com/crafthippie/bromance/issues/129)) ([a934da0](https://github.com/crafthippie/bromance/commit/a934da04483a4ac73a637df4b10b724a3cc191d7))
+
 ## [3.3.1](https://github.com/crafthippie/bromance/compare/v3.3.0...v3.3.1) (2026-08-31)
 
 ### Dependencies
