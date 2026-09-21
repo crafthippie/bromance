@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.4.1](https://github.com/crafthippie/bromance/compare/v3.4.0...v3.4.1) (2026-09-21)
+
+### Dependencies
+
+* **patch:** pin quay.io/crafthippie/bromance docker tag to 0317488 ([#132](https://github.com/crafthippie/bromance/issues/132)) ([fa9e2b5](https://github.com/crafthippie/bromance/commit/fa9e2b557b94e85f41c29096e1a647159400a8ee))
+
 ## [3.4.0](https://github.com/crafthippie/bromance/compare/v3.3.2...v3.4.0) (2026-09-14)
 
 ### Dependencies
