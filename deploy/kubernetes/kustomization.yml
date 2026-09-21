@@ -26,6 +26,6 @@ secretGenerator:
 images:
   - name: minecraft-server
     newName: quay.io/crafthippie/bromance
-    newTag: 3.4.1
+    newTag: 3.4.1@sha256:962cb2ade0363c63fe90dbab3a81a1eccc4cc928b266942fdaa3a5525c9b6dc6
 
 ...
