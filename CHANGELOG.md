@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.4.5](https://github.com/crafthippie/bromance/compare/v3.4.4...v3.4.5) (2026-10-19)
+
+### Dependencies
+
+* **mise:** update dependency hugo-extended to v0.168.0 ([#142](https://github.com/crafthippie/bromance/issues/142)) ([6ba7ccb](https://github.com/crafthippie/bromance/commit/6ba7ccb8837535662300d06795b721532a0ad663))
+* **mise:** update dependency prek to v0.5.6 ([#144](https://github.com/crafthippie/bromance/issues/144)) ([0b69c3e](https://github.com/crafthippie/bromance/commit/0b69c3e245780ce7a0ed1cf958de52e5a11873c3))
+* **mise:** update module go:github.com/packwiz/packwiz to v0.0.0-20261014010756-170b22d78595 ([#143](https://github.com/crafthippie/bromance/issues/143)) ([93f343e](https://github.com/crafthippie/bromance/commit/93f343e4fcf9e092b6e088b8909933466ea877c1))
+* **patch:** pin quay.io/crafthippie/bromance docker tag to 313f1d4 ([#141](https://github.com/crafthippie/bromance/issues/141)) ([4d93fad](https://github.com/crafthippie/bromance/commit/4d93fad05e7df9dd7be33354d5df400854052cc3))
+
 ## [3.4.4](https://github.com/crafthippie/bromance/compare/v3.4.3...v3.4.4) (2026-10-12)
 
 ### Dependencies
