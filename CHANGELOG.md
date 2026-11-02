@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.4.7](https://github.com/crafthippie/bromance/compare/v3.4.6...v3.4.7) (2026-11-02)
+
+### Dependencies
+
+* **mise:** update dependency hugo-extended to v0.169.0 ([#148](https://github.com/crafthippie/bromance/issues/148)) ([adace5d](https://github.com/crafthippie/bromance/commit/adace5d95ca3f327a290641f1f6bad733bf0b0c9))
+* **mise:** update dependency prek to v0.5.9 ([#150](https://github.com/crafthippie/bromance/issues/150)) ([8613f3a](https://github.com/crafthippie/bromance/commit/8613f3ab5b1435a8d7168357ab78295fb79d6764))
+* **mise:** update node.js to v26 ([#149](https://github.com/crafthippie/bromance/issues/149)) ([d2df285](https://github.com/crafthippie/bromance/commit/d2df2857c208f861eb63fbe5baeabaa2d3432087))
+* **patch:** pin quay.io/crafthippie/bromance docker tag to 1e0def8 ([#147](https://github.com/crafthippie/bromance/issues/147)) ([38b53d0](https://github.com/crafthippie/bromance/commit/38b53d009dcb746d6ff38308383ee4e79c0a64d8))
+
 ## [3.4.6](https://github.com/crafthippie/bromance/compare/v3.4.5...v3.4.6) (2026-10-26)
 
 ### Dependencies
