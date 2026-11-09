@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.8](https://github.com/crafthippie/bromance/compare/v3.4.7...v3.4.8) (2026-11-09)
+
+### Dependencies
+
+* **mise:** update dependency prek to v0.5.10 ([#152](https://github.com/crafthippie/bromance/issues/152)) ([03c146e](https://github.com/crafthippie/bromance/commit/03c146e5c5a31301d262d98ac91d1f1ad6430185))
+* **patch:** pin quay.io/crafthippie/bromance docker tag to cf4f133 ([#151](https://github.com/crafthippie/bromance/issues/151)) ([885a91d](https://github.com/crafthippie/bromance/commit/885a91d88a57f746416bfa0b0f5249f83dab00ed))
+
 ## [3.4.7](https://github.com/crafthippie/bromance/compare/v3.4.6...v3.4.7) (2026-11-02)
 
 ### Dependencies
