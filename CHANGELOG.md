@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.5.0](https://github.com/crafthippie/bromance/compare/v3.4.9...v3.5.0) (2026-11-23)
+
+### Features
+
+* switch to plain hugo and resolve deprecations ([efe7f8c](https://github.com/crafthippie/bromance/commit/efe7f8c8a175da7bf3b7a633c1b24bffaf671e85))
+
+### Bugfixes
+
+* replace security allowContent with cascade config ([474d3be](https://github.com/crafthippie/bromance/commit/474d3be90b3d59dffa9a533659ee01c965534efb))
+
+### Dependencies
+
+* **mise:** update dependency hugo-extended to v0.170.1 ([#156](https://github.com/crafthippie/bromance/issues/156)) ([d369e87](https://github.com/crafthippie/bromance/commit/d369e872d47924ad66df085897b7526f82c3235c))
+
 ## [3.4.9](https://github.com/crafthippie/bromance/compare/v3.4.8...v3.4.9) (2026-11-16)
 
 ### Dependencies
